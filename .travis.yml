@@ -10,6 +10,7 @@ cache:
     - $HOME/.pip-cache
 
 install:
+  - pip install Pillow
   - pip install -e .
   
 script:
