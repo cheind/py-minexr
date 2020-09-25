@@ -20,5 +20,6 @@ deploy:
   provider: pypi
   username: "__token__"
   distributions: "sdist bdist_wheel"
+  skip_existing: true
   password:
     secure: kpUG8dJVDXvDl8x9c4T9FtGzE4BLU87O1yL3nozKzslqEedE5qPw2fcy/EaA7SmhzwH/vO8AomTDJEvaEM1466P1j25s8C+/mXbZCXtz8qR06kJp8IgEgcJcIYmWA3nqWRMz7EtpuTtYnDQ2Q/TOWC9mnVjj7pi3Uz6Va4MoUxuMBM4z4n3OuF+eJ+AS/uCfjmaRbXd3SDTXYOKVGUHNMMbDXlLVvTOCDjebf9pIGfmTK720lxdrAUtQfGTqZwY7wAhTVYTZqNJNyYq+f/3Ar1eTdmn1kyBI4Ei/sBMKtiVfc35tuyvRKjqPNrBd1YnCsWNXBQH2NqrEMYBdNTs/w+Blu8O9mXyPe/QFXW9+m/0MPP2Ch4wbHbifkF8BmcFp0/1i+JHn+qfDco7haiu1O0Owi3afh+NKBlVMMrZZ5bFc+5AEI/9rMvc1qB8y6XBQUdGsbsV1vYkolpaAieJJSVKw8krq0FKjr1Au24iSe7g2Jsz//WfW4Fmg/06v6TZ49G3cGMGfmdWnkyg/cNk+fW3d3xrqqvoyuJUdEpqj3mdKbH8CeqUKWbiGY08fAWzDvfLdN+2D95z+zP9JZfEX/D0WAgNsJPEGIAm4Ee72FUk/X45yCiOVIrKaLN5Z3ckKe2x+8gbLYveABgMTAsb6KIe5/L0nItcg0OLvSlHgnHY=
