@@ -44,3 +44,7 @@ pip install -e .
 ``` 
 
 ## Tests
+To run the tests
+```
+pytest
+``` 
