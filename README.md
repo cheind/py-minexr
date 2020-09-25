@@ -38,7 +38,11 @@ The following timings are produced by [bench.py](./bench.py) by repeatable readi
 |**minexr**|**0.004**|with channel concatenate|
 
 ## Install
-Clone and invoke
+Either via pip
+```
+pip install minexr
+```
+Or clone this repository and invoke
 ```
 pip install -e .
 ``` 
