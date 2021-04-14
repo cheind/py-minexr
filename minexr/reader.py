@@ -128,7 +128,7 @@ class MinExrReader:
         nbytes = SOFF*H
 
         self.fp.seek(self.first_offset, 0)
-        image = np.frombuffer(self.fp.read(nbytes), dtype=np.float16, count=-1, offset=8)
+        image = np.frombuffer(self.fp.read(nbytes), dtype=dtype, count=-1, offset=8)
         self.image = np.lib.stride_tricks.as_strided(image, (H,C,W), strides)
 
     def _read_header_attrs(self, buf):
