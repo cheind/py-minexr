@@ -27,8 +27,6 @@ def test_parse_files():
         depth = minr.select(['View Layer.Depth.Z']).astype(np.float32)
         normal = minr.select(['View Layer.Normal.X','View Layer.Normal.Y','View Layer.Normal.Z']).astype(np.float32)
         normal = (normal * 0.5) + 0.5
-
-        import matplotlib.pyplot as plt
         
         t_rgba = np.asarray(Image.open(ETC_PATH/'Color0002.png').convert('RGBA')) / 255.0
         t_normal = np.asarray(Image.open(ETC_PATH/'Normal0002.png').convert('RGB')) / 255.0
