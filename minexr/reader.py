@@ -94,7 +94,8 @@ class MinExrReader:
         # Magic and version and info bits
         magic, version, b2, b3, b4 = struct.unpack('<iB3B', buf.read(8))
         assert magic == 20000630, 'Not an OpenEXR file.'
-        assert b2 == b3 == b4 == 0, 'Not a single-part scan line file.'
+        assert b2 in (0, 4), 'Not a single-part scan line file.'
+        assert b3 == b4 == 0, 'Unused flags in version field are not zero.'
 
         # Header attributes
         self.attrs = self._read_header_attrs(buf)
