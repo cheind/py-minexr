@@ -18,7 +18,7 @@ import minexr
 with open('file.exr', 'rb') as fp:
         reader = minexr.load(fp)
         rgba = reader.select(['Color.R','Color.G','Color.B','Color.A'])
-        # a HxWx3 np.array with dtype based on exr type.
+        # a HxWx4 np.array with dtype based on exr type.
         ...
 ```
 Full [example.py](./example.py) loads the following images
