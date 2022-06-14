@@ -94,7 +94,8 @@ class MinExrReader:
         # Magic and version and info bits
         magic, version, b2, b3, b4 = struct.unpack('<iB3B', buf.read(8))
         assert magic == 20000630, 'Not an OpenEXR file.'
-        assert b2 == b3 == b4 == 0, 'Not a single-part scan line file.'
+        assert b2 in (0, 4), 'Not a single-part scan line file.'
+        assert b3 == b4 == 0, 'Unused flags in version field are not zero.'
 
         # Header attributes
         self.attrs = self._read_header_attrs(buf)
@@ -128,7 +129,7 @@ class MinExrReader:
         nbytes = SOFF*H
 
         self.fp.seek(self.first_offset, 0)
-        image = np.frombuffer(self.fp.read(nbytes), dtype=np.float16, count=-1, offset=8)
+        image = np.frombuffer(self.fp.read(nbytes), dtype=dtype, count=-1, offset=8)
         self.image = np.lib.stride_tricks.as_strided(image, (H,C,W), strides)
 
     def _read_header_attrs(self, buf):
